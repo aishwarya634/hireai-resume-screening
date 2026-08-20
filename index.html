@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireAI — Resume Screening</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Inter, Arial, sans-serif;
+            background: #f5f7fb;
+            color: #172033;
+        }
+
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e9f2;
+            padding: 18px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: #6757d9;
+        }
+
+        .badge {
+            background: #eeecff;
+            color: #5647c8;
+            padding: 8px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 35px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 5vw, 52px);
+            line-height: 1.05;
+            margin-bottom: 14px;
+        }
+
+        .hero p {
+            color: #68738a;
+            max-width: 620px;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        button {
+            border: none;
+            background: #6757d9;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(103, 87, 217, 0.2);
+        }
+
+        button:hover {
+            background: #5647c8;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        .status {
+            display: none;
+            margin: 20px 0;
+            padding: 15px 18px;
+            border-radius: 12px;
+            background: #ffffff;
+            border: 1px solid #e5e9f2;
+        }
+
+        .error {
+            color: #b42318;
+            background: #fff1f0;
+            border-color: #ffc7c2;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 25px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e9f2;
+            border-radius: 18px;
+            padding: 22px;
+            box-shadow: 0 6px 20px rgba(25, 35, 55, 0.04);
+        }
+
+        .stat-label {
+            color: #788399;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .stat-value {
+            font-size: 30px;
+            font-weight: 800;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 22px;
+        }
+
+        .card h2 {
+            font-size: 19px;
+            margin-bottom: 20px;
+        }
+
+        .candidate {
+            padding: 17px 0;
+            border-bottom: 1px solid #edf0f5;
+        }
+
+        .candidate:last-child {
+            border-bottom: none;
+        }
+
+        .candidate-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .candidate-name {
+            font-weight: 750;
+        }
+
+        .rank {
+            color: #6757d9;
+            margin-right: 8px;
+        }
+
+        .score {
+            font-weight: 800;
+        }
+
+        .bar-bg {
+            height: 9px;
+            background: #edf0f5;
+            border-radius: 99px;
+            margin: 10px 0;
+            overflow: hidden;
+        }
+
+        .bar {
+            height: 100%;
+            background: #6757d9;
+            border-radius: 99px;
+        }
+
+        .recommendation {
+            font-size: 12px;
+            font-weight: 700;
+            color: #257a48;
+        }
+
+        .best-score {
+            font-size: 54px;
+            font-weight: 850;
+            color: #6757d9;
+            margin: 10px 0 20px;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 7px 10px;
+            border-radius: 8px;
+            background: #f0efff;
+            color: #5647c8;
+            font-size: 12px;
+            margin: 4px 4px 0 0;
+        }
+
+        .section {
+            margin-top: 20px;
+        }
+
+        .section h3 {
+            font-size: 14px;
+            margin-bottom: 9px;
+        }
+
+        .section ul {
+            padding-left: 18px;
+            color: #68738a;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .actions {
+            margin-top: 25px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .secondary {
+            background: #ffffff;
+            color: #5647c8;
+            border: 1px solid #dcd8ff;
+            box-shadow: none;
+        }
+
+        #results {
+            display: none;
+        }
+
+        .chart {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 15px;
+            border: 1px solid #edf0f5;
+        }
+
+        @media (max-width: 800px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Hire<span>AI</span></div>
+    <div class="badge">AI Resume Screening</div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div>
+            <h1>Screen smarter.<br>Hire better.</h1>
+            <p>
+                Compare multiple candidates against a job description using
+                Groq-powered AI analysis, weighted scoring and explainable recommendations.
+            </p>
+        </div>
+
+        <button id="screenBtn" onclick="runScreening()">
+            Start AI Screening
+        </button>
+    </section>
+
+    <div id="status" class="status"></div>
+
+    <section id="results">
+
+        <div class="stats">
+            <div class="card">
+                <div class="stat-label">Job</div>
+                <div class="stat-value" id="jobTitle">—</div>
+            </div>
+
+            <div class="card">
+                <div class="stat-label">Candidates Screened</div>
+                <div class="stat-value" id="candidateCount">—</div>
+            </div>
+
+            <div class="card">
+                <div class="stat-label">Top Score</div>
+                <div class="stat-value" id="topScore">—</div>
+            </div>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <h2>🏆 Candidate Ranking</h2>
+                <div id="ranking"></div>
+            </div>
+
+            <div class="card">
+                <h2>🥇 Best Candidate</h2>
+
+                <div id="bestCandidate"></div>
+
+                <div class="actions">
+                    <a href="/outputs/report.md" target="_blank">
+                        <button class="secondary">View Report</button>
+                    </a>
+
+                    <a href="/outputs/scores.png" target="_blank">
+                        <button class="secondary">View Chart</button>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card" style="margin-top:22px;">
+            <h2>📊 Candidate Score Visualization</h2>
+            <img id="chart" class="chart" src="/outputs/scores.png" alt="Candidate score chart">
+        </div>
+
+    </section>
+</main>
+
+<script>
+async function runScreening() {
+    const button = document.getElementById("screenBtn");
+    const status = document.getElementById("status");
+    const results = document.getElementById("results");
+
+    button.disabled = true;
+    button.textContent = "Analyzing candidates...";
+
+    status.style.display = "block";
+    status.className = "status";
+    status.textContent = "🤖 Sending resumes to Groq and calculating candidate scores...";
+
+    results.style.display = "none";
+
+    try {
+        const response = await fetch("/api/screen", {
+            method: "POST"
+        });
+
+        const data = await response.json();
+
+        if (!data.success) {
+            throw new Error(data.error || "Screening failed.");
+        }
+
+        renderResults(data.results);
+
+        status.textContent = "✅ AI screening completed successfully.";
+        results.style.display = "block";
+
+        document.getElementById("chart").src =
+            "/outputs/scores.png?t=" + Date.now();
+
+    } catch (error) {
+        status.className = "status error";
+        status.textContent = "❌ " + error.message;
+    } finally {
+        button.disabled = false;
+        button.textContent = "Run Screening Again";
+    }
+}
+
+function renderResults(results) {
+    const candidates = results.candidates;
+
+    document.getElementById("jobTitle").textContent =
+        results.job_title;
+
+    document.getElementById("candidateCount").textContent =
+        results.candidate_count;
+
+    document.getElementById("topScore").textContent =
+        candidates[0].calculated_score + "/100";
+
+    const ranking = document.getElementById("ranking");
+    ranking.innerHTML = "";
+
+    candidates.forEach(candidate => {
+        ranking.innerHTML += `
+            <div class="candidate">
+                <div class="candidate-top">
+                    <div>
+                        <span class="rank">#${candidate.rank}</span>
+                        <span class="candidate-name">
+                            ${escapeHtml(candidate.candidate_name)}
+                        </span>
+                    </div>
+
+                    <span class="score">
+                        ${candidate.calculated_score}/100
+                    </span>
+                </div>
+
+                <div class="bar-bg">
+                    <div class="bar"
+                         style="width:${candidate.calculated_score}%">
+                    </div>
+                </div>
+
+                <div class="recommendation">
+                    ${escapeHtml(candidate.recommendation)}
+                </div>
+            </div>
+        `;
+    });
+
+    const best = candidates[0];
+
+    document.getElementById("bestCandidate").innerHTML = `
+        <div class="candidate-name">
+            ${escapeHtml(best.candidate_name)}
+        </div>
+
+        <div class="best-score">
+            ${best.calculated_score}/100
+        </div>
+
+        <div>
+            ${best.matched_skills.map(
+                skill => `<span class="pill">${escapeHtml(skill)}</span>`
+            ).join("")}
+        </div>
+
+        <div class="section">
+            <h3>Strengths</h3>
+            <ul>
+                ${best.strengths.map(
+                    item => `<li>${escapeHtml(item)}</li>`
+                ).join("")}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Skill Gaps</h3>
+            <ul>
+                ${best.missing_skills.map(
+                    item => `<li>${escapeHtml(item)}</li>`
+                ).join("")}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>AI Recommendation</h3>
+            <p style="color:#68738a; line-height:1.6; font-size:14px;">
+                ${escapeHtml(best.remarks)}
+            </p>
+        </div>
+    `;
+}
+
+function escapeHtml(value) {
+    const div = document.createElement("div");
+    div.textContent = value ?? "";
+    return div.innerHTML;
+}
+</script>
+
+</body>
+</html>
