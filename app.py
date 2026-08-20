@@ -20,7 +20,10 @@ app = Flask(__name__)
 BASE_DIR = Path(__file__).resolve().parent
 INPUTS_DIR = BASE_DIR / "inputs"
 PROFILES_DIR = INPUTS_DIR / "profiles"
-OUTPUTS_DIR = BASE_DIR / "outputs"
+import tempfile
+
+OUTPUTS_DIR = Path(tempfile.gettempdir()) / "hireai_outputs"
+OUTPUTS_DIR.mkdir(parents=True, exist_ok=True)
 
 OUTPUTS_DIR.mkdir(exist_ok=True)
 
@@ -173,7 +176,7 @@ def run_screening():
             },
         ],
         temperature=0.1,
-        max_completion_tokens=6000,
+        max_completion_tokens=2500,
     )
 
     result = response.choices[0].message.content
