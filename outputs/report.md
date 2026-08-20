@@ -48,162 +48,158 @@ We are looking for a Python Backend Developer to join our engineering team.
 
 | Rank | Candidate | Score | Recommendation | Remarks |
 |---:|---|---:|---|---|
-| 1 | candidate1 | 89/100 | Recommended | Candidate1 meets all required technical criteria, has the right amount of experience, and holds a relevant cloud certification. Minor gaps in Redis and CI/CD can be trained on‑the‑job. |
-| 2 | candidate3 | 79/100 | Consider | Candidate3 brings valuable cloud and DevOps expertise and solid Python fundamentals, but would need upskilling on Python web frameworks to fully match the role. |
-| 3 | candidate2 | 71/100 | Consider | Candidate2 is a competent junior backend developer but lacks several preferred skills and certifications that would make them a stronger fit. |
-| 4 | candidate4 | 52/100 | Not Recommended | Candidate4 shows potential but does not meet the experience threshold nor the breadth of technical skills required for the role. |
-| 5 | candidate5 | 38/100 | Not Recommended | Candidate5 is a data‑analysis specialist; the profile does not align with the Python backend developer role. |
+| 1 | candidate1 | 82/100 | Recommended | Meets all core requirements and several preferred skills. Minor gaps in OOP evidence and a few preferred technologies, but overall a strong fit for the role. |
+| 2 | candidate3 | 78/100 | Consider | Strong overall technical foundation and cloud expertise, but lacks Python‑centric API framework experience. Still a viable candidate, especially if cloud skills are valued. |
+| 3 | candidate2 | 63/100 | Weak Match | Meets minimum experience and core technical requirements but lacks many preferred skills and certifications, making the candidate a moderate fit. |
+| 4 | candidate4 | 42/100 | Not Recommended | Candidate is early in their career and does not meet the core technical or experience thresholds for this position. |
+| 5 | candidate5 | 39/100 | Not Recommended | While technically competent in Python and SQL, the candidate’s experience is centered on data analytics, making them a poor fit for a backend developer role. |
 
 # Top 5 Candidates
 
-## #1 candidate1 — 89/100
+## #1 candidate1 — 82/100
 
 ### Strengths
 
-- Strong Python and FastAPI/Flask experience
-- Hands‑on REST API development
-- Experience with PostgreSQL and Docker
-- AWS Cloud Practitioner certification shows cloud awareness
-- Clear problem‑solving and debugging abilities
+- Solid Python backend experience (2 years)
+- Proficient with FastAPI and Flask
+- Hands‑on with Docker and PostgreSQL
+- AWS Cloud Practitioner certification
+- Demonstrated problem‑solving and teamwork
 
 ### Missing Skills
 
+- Object-oriented programming
+- AWS or cloud platforms
 - Redis
-- AWS
 - CI/CD
-- Object-oriented programming (explicit mention)
 
 ### Weaknesses
 
-- No direct experience with Redis
-- AWS experience limited to certification, not practical projects
-- No explicit CI/CD pipeline experience mentioned
+- No explicit mention of object‑oriented programming experience
+- Lacks Redis and CI/CD exposure
 
 ### Remarks
 
-Candidate1 meets all required technical criteria, has the right amount of experience, and holds a relevant cloud certification. Minor gaps in Redis and CI/CD can be trained on‑the‑job.
+Meets all core requirements and several preferred skills. Minor gaps in OOP evidence and a few preferred technologies, but overall a strong fit for the role.
 
-## #2 candidate3 — 79/100
+## #2 candidate3 — 78/100
 
 ### Strengths
 
-- AWS Certified Developer and hands‑on AWS deployment
-- Docker and CI/CD pipeline experience
-- Leadership and strong communication
-- Broad backend and cloud knowledge
+- AWS Certified Developer and practical cloud deployment experience
+- Docker and CI/CD pipeline expertise
+- Solid OOP background from Java experience
+- Good leadership and communication skills
 
 ### Missing Skills
 
 - FastAPI or Flask
-- REST API development in Python
+- REST API development (Python)
+- Object-oriented programming
 - PostgreSQL
-- GitHub (explicit mention)
 - Redis
-- Object-oriented programming (explicit mention)
 
 ### Weaknesses
 
-- Lacks Python‑specific web framework experience (FastAPI/Flask)
-- Limited exposure to PostgreSQL and Redis
-- Primary experience is in Java/Spring rather than Python backend
+- Limited Python‑specific web framework experience (no FastAPI/Flask)
+- No direct experience with PostgreSQL or Redis
 
 ### Remarks
 
-Candidate3 brings valuable cloud and DevOps expertise and solid Python fundamentals, but would need upskilling on Python web frameworks to fully match the role.
+Strong overall technical foundation and cloud expertise, but lacks Python‑centric API framework experience. Still a viable candidate, especially if cloud skills are valued.
 
-## #3 candidate2 — 71/100
+## #3 candidate2 — 63/100
 
 ### Strengths
 
-- Solid Python/Flask API development
+- Relevant Python and Flask experience (1.5 years)
 - Good teamwork and communication
-- Relevant 1.5‑year backend experience
+- Solid understanding of relational databases (MySQL)
 
 ### Missing Skills
 
-- FastAPI
-- PostgreSQL
+- Object-oriented programming
 - Docker
-- AWS
+- PostgreSQL
+- AWS or cloud platforms
 - Redis
 - CI/CD
-- Object-oriented programming (explicit mention)
 
 ### Weaknesses
 
-- Missing many preferred technologies (Docker, AWS, CI/CD)
-- No certifications to demonstrate deeper expertise
+- No certifications
+- Missing several preferred technologies and OOP evidence
 
 ### Remarks
 
-Candidate2 is a competent junior backend developer but lacks several preferred skills and certifications that would make them a stronger fit.
+Meets minimum experience and core technical requirements but lacks many preferred skills and certifications, making the candidate a moderate fit.
 
-## #4 candidate4 — 52/100
-
-### Strengths
-
-- Basic Python web development experience
-- Internship exposure to full‑stack project
-
-### Missing Skills
-
-- FastAPI
-- REST API development (advanced)
-- PostgreSQL
-- Docker
-- AWS
-- Redis
-- CI/CD
-- Object-oriented programming (explicit mention)
-- Problem solving (explicit mention)
-
-### Weaknesses
-
-- Only 6 months of internship – below required experience
-- Limited skill set; many required/preferred technologies missing
-- No certifications related to backend development
-
-### Remarks
-
-Candidate4 shows potential but does not meet the experience threshold nor the breadth of technical skills required for the role.
-
-## #5 candidate5 — 38/100
+## #4 candidate4 — 42/100
 
 ### Strengths
 
-- Strong data‑analysis and Python scripting abilities
-- Good communication and presentation skills
+- Basic Python programming knowledge
+- Internship exposure to software development
 
 ### Missing Skills
 
 - FastAPI or Flask
 - REST API development
-- Git and GitHub
+- SQL
 - Object-oriented programming
-- Problem solving (explicit mention)
+- Problem-solving (as a technical skill)
 - Docker
 - PostgreSQL
-- AWS
+- AWS or cloud platforms
 - Redis
 - CI/CD
 
 ### Weaknesses
 
-- No backend development experience or relevant frameworks
-- Educational background not directly related to computer science
-- Certifications focused on BI, not backend engineering
+- Insufficient professional experience (6 months)
+- Lacks most required and preferred technical skills
+- No certifications relevant to the role
 
 ### Remarks
 
-Candidate5 is a data‑analysis specialist; the profile does not align with the Python backend developer role.
+Candidate is early in their career and does not meet the core technical or experience thresholds for this position.
+
+## #5 candidate5 — 39/100
+
+### Strengths
+
+- Strong data analysis and Python scripting abilities
+- Good communication and analytical thinking
+
+### Missing Skills
+
+- FastAPI or Flask
+- REST API development
+- Object-oriented programming
+- Problem-solving (as a technical skill)
+- Git
+- Docker
+- PostgreSQL
+- AWS or cloud platforms
+- Redis
+- CI/CD
+
+### Weaknesses
+
+- Background focused on data analytics rather than backend development
+- Missing core backend development skills and relevant certifications
+
+### Remarks
+
+While technically competent in Python and SQL, the candidate’s experience is centered on data analytics, making them a poor fit for a backend developer role.
 
 # Hiring Recommendation
 
 **Recommended Candidate:** candidate1
 
-**Final Score:** 89/100
+**Final Score:** 82/100
 
-Recommend moving forward with candidate1 as the primary choice due to strong alignment with required and preferred skills, appropriate experience, and relevant certification. Candidate3 is a close second, offering valuable cloud and DevOps expertise that can complement the team after minor upskilling in Python web frameworks. Candidate2 can be considered for a junior role or future growth, while candidates4 and 5 do not meet the core requirements for this position.
+Candidate 1 is the strongest overall match, satisfying all core requirements and several preferred skills. Candidate 3 is a close second, offering excellent cloud and DevOps expertise but lacking Python‑specific web framework experience. These two should be prioritized for interview consideration.
 
 ---
 
