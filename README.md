@@ -4,7 +4,6 @@
 > <img width="1261" height="627" alt="image" src="https://github.com/user-attachments/assets/18301653-2877-441d-b8cc-ecfa1820ac7e" />
 
 <img width="1263" height="631" alt="image" src="https://github.com/user-attachments/assets/7e3b2d3c-7ea6-435b-858f-12107200e715" />
-<img width="1261" height="628" alt="image" src="https://github.com/user-attachments/assets/b6261226-0a9c-45c7-9633-8068bda3d3de" />
 
 🔗 **Live demo:** [hireai-resume-screening.vercel.app](hireai-resume-screening-yzw4.vercel.app)
 
