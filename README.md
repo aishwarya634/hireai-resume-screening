@@ -5,7 +5,7 @@
 
 <img width="1263" height="631" alt="image" src="https://github.com/user-attachments/assets/7e3b2d3c-7ea6-435b-858f-12107200e715" />
 
-🔗 **Live demo:** [hireai-resume-screening.vercel.app](https://https://hireai-resume-screening-git-main-aishwarya634-s-projects13.vercel.app/)
+🔗 **Live demo:** [hireai-resume-screening-git-main-aishwarya634-s-projects13.vercel.app](https://hireai-resume-screening-git-main-aishwarya634-s-projects13.vercel.app/)
 
 ## 💡 The Problem
 
